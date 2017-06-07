@@ -1,0 +1,85 @@
+package tbj1;
+import java.util.Scanner;
+public class Tbj1 {
+
+    public static void main(String[] args) {
+        Scanner datos =new Scanner(System.in);
+        int i,x;
+        //Entrada de datos
+        int[][] mat;   
+        //Limite de la matriz
+        System.out.println("Ingrese el limite de la matriz");
+        int limite=datos.nextInt();
+        mat=new int[limite][limite];
+        //Ingreso de datos
+        System.out.println("Ingrese los valores de la matriz");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                mat[i][x]=datos.nextInt();
+            }
+        }     
+        //Preesentacion de matriz 
+        System.out.println("Presentacion de la matriz");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                System.out.print(mat[i][x]+" ");
+            }
+            System.out.println(" ");
+        }    
+        //Ultima fila de la matriz
+        System.out.println("Ultima fila de la matriz");
+        for(x=0;x<limite;x++){
+                System.out.print(mat[limite-1][x]+" ");
+        }
+        //Diagonal principal
+        System.out.println("\nDiagonal principal");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i==x){
+                System.out.print(mat[i][x]+" ");
+                } 
+            }
+        }
+        //Diagonal secundaria
+        System.out.println("\nDiagonal secundaria");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i+x==limite-1){
+                System.out.print(mat[i][x]+" ");
+                } 
+            }
+        }
+        //Sobre diagonal principal
+        System.out.println("\nElementos sobre la diagonal principal");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i<x){
+                System.out.print(mat[i][x]+" ");
+                } 
+            }
+        }
+        //Sobre duiagonal secundaria
+        System.out.println("\nElementos sobre la diagonal secundaria");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i+x<limite-1){
+                System.out.print(mat[i][x]+" ");
+                } 
+            }
+        }
+        //Sig-sag
+        System.out.println("\nElementos recorridos en sig-sag");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i==limite){
+                    for(i=limite;i<=0;i--){
+                        System.out.print(mat[i][x]+" ");
+                    }
+                }
+                for(x=0;i<limite;i++){
+                    System.out.print(mat[i][x]+" ");
+                } 
+            }
+        }
+    }    
+}  
