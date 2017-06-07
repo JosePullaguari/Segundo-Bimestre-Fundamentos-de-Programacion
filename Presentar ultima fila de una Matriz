@@ -1,0 +1,45 @@
+package tbj1;
+import java.util.Scanner;
+public class Tbj1 {
+
+    public static void main(String[] args) {
+        Scanner datos =new Scanner(System.in);
+        int i,x;
+        //Entrada de datos
+       
+        int[][] mat;
+                
+        //Limite de la matriz
+        System.out.println("Ingrese el limite de la matriz");
+        int limite=datos.nextInt();
+        mat=new int[limite][limite];
+        //Ingreso de datos
+        System.out.println("Ingrese los valores de la matriz");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                mat[i][x]=datos.nextInt();
+            }
+        }     
+        
+        //Preesentacion
+        System.out.println("Presentacion de la matriz");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                System.out.print(mat[i][x]+" ");
+            }
+            System.out.println(" ");
+        }    
+        System.out.println("Ultima fila de la matriz");
+        for(x=0;x<limite;x++){
+                System.out.print(mat[limite-1][x]+" ");
+    } 
+        System.out.println("Diagonal principal");
+        for(i=0;i<limite;i++){
+            for(x=0;x<limite;x++){
+                if(i==x){
+                System.out.print(mat[i][x]+" ");
+                } 
+            }
+      }
+  }
+}
