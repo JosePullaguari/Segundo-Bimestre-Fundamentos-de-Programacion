@@ -1,0 +1,27 @@
+package eje1;
+import java.util.Scanner;
+public class Eje1 {
+
+    public static void main(String[] args) {
+        Scanner datos =new Scanner(System.in);
+        //Declaracion de variables
+        int n;
+        System.out.println("Ingrese el limite del arreglo");
+        n=datos.nextInt();
+        int[] lista;
+        lista= new int[n];
+        for(int i=0;i<lista.length;i++){
+               System.out.println("Ingrese el elemento"+i); 
+               lista[i]=datos.nextInt();
+        }
+        for (int i=0;i<lista.length;i++){
+            if(lista[i]%2!=0){
+               System.out.println("lista "+lista[i]+"es impar");
+            }else{
+                System.out.println("lista "+lista[i]+"es par");
+            }
+        }    
+        
+    }
+}
+    
