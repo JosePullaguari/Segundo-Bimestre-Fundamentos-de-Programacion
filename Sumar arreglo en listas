@@ -1,0 +1,30 @@
+package javaapplication8;
+import java.util.Scanner;
+public class JavaApplication8 {
+
+    public static void main(String[] args) {
+        Scanner datos =new Scanner(System.in);
+        //Declaracion de variables
+        int n,suma=0,suma1=0;
+        System.out.println("Ingrese el limite del arreglo");
+        n=datos.nextInt();
+        int[] lista;
+        lista= new int[n];
+        
+        for(int i=0;i<lista.length;i++){
+               System.out.println("Ingrese el elemento"+i); 
+               lista[i]=datos.nextInt();
+        }
+        for (int i=0;i<lista.length;i=i+2){
+            System.out.println("lista1= "+lista[i]);
+            suma=lista[i]+suma;
+            lista[i]=suma;
+            System.out.println("suma"+lista[i]);
+        } 
+       for (int i=1;i<lista.length;i=i+2){
+            System.out.println("lista2= "+lista[i]);
+            suma1=lista[i]+suma1;
+            lista[i]=suma1;
+            System.out.println("suma"+lista[i]);
+       }
+    }
