@@ -1,0 +1,53 @@
+package javaapplication6;
+import java.util.Scanner;
+public class JavaApplication6 {
+
+    public static Scanner datos = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        float total = (float) descuentoBecas((int) (ciclo()+calcumaterias()));
+        System.out.print("El valor a pagar es: "+total);
+    }
+    public static float ciclo() {
+        System.out.println("Ingrese el ciclo academico: ");
+        System.out.println("<<ciclo...1>>");
+        System.out.println("<<ciclo...3>>");
+        System.out.println("<<ciclo...5>>");
+        System.out.println("<<ciclo...7>>");
+        System.out.println("<<ciclo9>>");
+        
+        int ciclo = datos.nextInt();
+        float matricula = 700 + ((ciclo - 1) * 10);
+        return matricula;
+    }
+    public static float calcumaterias() {
+        System.out.println("Ingrese el numero de materias troncales: ");
+        int troncales = datos.nextInt();
+        System.out.println("Ingrese el numero de materias basicas: ");
+        int basicas = datos.nextInt();
+        float resultado = 0;
+        resultado = ((troncales * 4 * 35)+(basicas * 3 * 35 ));
+        return resultado;
+    }
+    public static double descuentoBecas (int resultado){
+        Scanner input = new Scanner(System.in);
+        double descuento = 0, total = 0;
+        System.out.println("Seleccione su tipo de beca: ");
+        System.out.println("1-Meritos\n2-Familiar\n5-Ninguna");
+        int op = input.nextInt();
+        switch (op){
+            case (1): 
+                descuento = 0.15; 
+                break;
+            case (2): 
+                descuento = 0.08; 
+                break;
+            default:
+                descuento = 0;
+                break;            
+        }
+        total = (resultado-(resultado*descuento)) * 1.14;       
+        return total;
+    }
+}
