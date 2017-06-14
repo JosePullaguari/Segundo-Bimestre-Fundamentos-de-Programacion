@@ -1,0 +1,27 @@
+package clase3;
+import java.util.Scanner;
+public class Clase3 {
+
+    public static double iva=0.14;
+    
+    public static void main(String[] args) {
+        Scanner datos=new Scanner(System.in);
+        //variables
+        double resultado;
+        String tipo;
+        mensaje();
+        resultado=calculoiva(354,iva);
+        System.out.println("el calculo del iva es"+resultado);
+      
+    }
+    public static void mensaje(){
+        System.out.println("mensaje de la funcion mensaje");
+        
+    }
+    public static double calculoiva(double subtotal, double iva){
+        double subtotal2=0;double total=0;
+        subtotal2=subtotal*iva;
+        total=subtotal2+subtotal;
+        return total;
+    }
+}
